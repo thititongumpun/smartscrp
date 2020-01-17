@@ -1,0 +1,9 @@
+.table tr, .table td {
+    border: solid 1px black;
+}
+
+.table th {
+    border: solid 1px black;
+    background-color: #fff2a8;
+    width: 100px;
+}

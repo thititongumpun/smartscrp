@@ -1,0 +1,93 @@
+
+
+
+<div style ="padding: 10px;">
+    <label>Your Cryptic Command: </label>
+    <input type="text" id="cmd" name="cmd" [(ngModel)]="cmd">
+    <button type = "button" (click)="sendCommand()">SEND</button>
+</div>
+<div style="padding: 10px">
+    <label>Retrieve Active PNR: </label>
+    <button type="button" (click)="getPNR()">RETRIEVE</button>
+</div>
+<div>
+    <label>Passengers: </label>
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pax of pax">
+          <td>{{pax.firstName}}</td>
+          <td>{{pax.lastName}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <label>Air Segments: </label>
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th>Carrier</th>
+          <th>Flight No.</th>
+          <th>Booking Class</th>
+          <th>Origin</th>
+          <th>Destination</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let air of airs">
+          <td>{{air.airlineCode}}</td>
+          <td>{{air.flightNumber}}</td>
+          <td>{{air.class}}</td>
+          <td>{{air.departureAirport}}</td>
+          <td>{{air.arrivalAirport}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div style="padding: 10px">
+  <label>Add Remark: </label>
+  <input type="text" id="remark" name="remark" [(ngModel)]="remark">
+  <button type="button" (click)="addRemark()">ADD</button>
+</div>
+
+<div style= "padding:10px">
+    <label>The last Command is: {{lastCMD}}</label>
+
+</div>
+
+
+<div style="padding: 10px">
+  <label>Retrieve Active TST: </label>
+  <button type="button" (click)="getTST()">RETRIEVE</button>
+</div>
+<div>
+  <label>TSTlist: </label>
+  <table class="table">
+    <thead class="thead-default">
+      <tr>
+        <th>TST</th>
+        <!-- <th>Lastname</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tst of TSTList">
+        <td>{{tst.tatooNumber}}</td>
+        <td>{{tst.fareElements[0].amount}}</td>
+                     
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div style ="Padding: 10px;">
+    <label> Switch Office: </label>
+    <input type="text" id="officeId" name="officeId" [(ngModel)]="officeId">
+    <button type="button" (click)="switchoOfficeId()">SWITCH</button>
+    
+
+  </div>
